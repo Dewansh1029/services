@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lead Management System</h1>
+        
+        <!-- Stepper Navigation -->
+        <div id="stepper">
+            <div class="step" id="step1">
+                <h2>Add New Lead</h2>
+                <form id="addLeadForm">
+                    <input type="text" id="lead_name" placeholder="Name" required>
+                    <input type="email" id="lead_email" placeholder="Email" required>
+                    <input type="number" id="lead_phone" placeholder="Phone Number" required>
+                    <input type="text" id="lead_status" placeholder="Status" required>
+                    <input type="text" id="lead_requirements" placeholder="Requirements" required>
+                    <input type="number" id="lead_call_frequency" placeholder="Call Frequency" required>
+                    <input type="date" id="lead_last_called" required>
+                    <button type="button" id="submitLead" onclick="submitLeadForm()">Submit Lead</button>
+                </form>
+            </div>
+            <div class="step" id="step2" style="display:none;">
+                <h2>Add New Contact</h2>
+                <form id="addContactForm">
+                    <input type="text" id="contact_lead_id" placeholder="Lead ID" required>
+                    <input type="text" id="contact_name" placeholder="Contact Name" required>
+                    <input type="text" id="contact_role" placeholder="Contact Role" required>
+                    <input type="number" id="contact_phone" placeholder="Phone Number" required>
+                </form>
+            </div>
+            <div class="step" id="step3" style="display:none;">
+                <h2>Record Interaction</h2>
+                <form id="recordInteractionForm">
+                    <input type="text" id="interaction_lead_id" placeholder="Lead ID" required>
+                    <input type="text" id="interaction_type" placeholder="Interaction Type" required>
+                    <textarea id="interaction_details" placeholder="Interaction Details" required></textarea>
+                    <input type="date" id="interaction_date" required>
+                </form>
+            </div>
+        </div>
+
+        <!-- Step Navigation -->
+        <div id="step-navigation">
+            <button type="button" id="prevStep" onclick="prevStep()">Previous</button>
+            <button type="button" id="nextStep" onclick="nextStep()">Next</button>
+        </div>
+
+        <!-- Fetch Lead Detail Section -->
+        <h2>Get Lead Detail</h2>
+        <input type="text" id="getLeadId" placeholder="Enter Lead ID">
+        <button onclick="getLeadDetail()">Get Lead Detail</button>
+
+        <!-- Display Lead Details -->
+        <div id="leadDetailResult" style="display:none;">
+            <h3>Lead Information</h3>
+            <p><strong>Status:</strong> <span id="leadStatus"></span></p>
+            <p><strong>Name:</strong> <span id="leadName"></span></p>
+            <p><strong>Email:</strong> <span id="leadEmail"></span></p>
+            <p><strong>Phone:</strong> <span id="leadPhone"></span></p>
+            <p><strong>Requirements:</strong> <span id="leadRequirements"></span></p>
+            <p><strong>Last Call:</strong> <span id="leadLastCall"></span></p>
+        </div>
+
+        <!-- ✅ Lead ID Popup (ADDED) -->
+        <div id="leadIdPopup" class="popup" style="display:none;">
+            <div class="popup-content">
+                <h2>Lead Added Successfully!</h2>
+                <p>Your generated Lead ID is: <strong id="generatedLeadId"></strong></p>
+                <button type="button" onclick="closeLeadIdPopup()">Close</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

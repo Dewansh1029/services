@@ -1,0 +1,65 @@
+/* Basic styles for the stepper */
+.step {
+  display: none; /* Hide all steps by default */
+}
+
+#stepper .step {
+  margin-bottom: 20px;
+}
+
+#step-navigation {
+  margin-top: 20px;
+}
+
+#prevStep, #nextStep {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#prevStep:disabled, #nextStep:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+input[type="text"], input[type="email"], input[type="number"], input[type="date"], textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+button[type="button"] {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button[type="button"]:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Popup Styling */
+.popup {
+  display: none;
+  position: fixed;
+  top: 20%;
+  left: 30%;
+  background-color: white;
+  border: 1px solid #333;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content {
+  text-align: center;
+}
+
+#leadIdPopup p {
+  font-size: 18px;
+  font-weight: bold;
+}
